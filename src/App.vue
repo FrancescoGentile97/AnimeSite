@@ -1,9 +1,12 @@
 <script>
 
 import Home from './components/Home.vue';
+import FavoritesAnime from "./components/FavoritesAnime.vue"
+import AnimeDetails from "./components/AnimeDetails.vue";
+
 import { store, animeFetch } from "./store";
 export default {
-  components: { Home },
+  components: { Home,FavoritesAnime ,AnimeDetails },
 
   data() {
     return {
@@ -19,7 +22,10 @@ export default {
 </script>
 
 <template>
-  <Home @searchAnime="onSearch"></Home>
+  <!-- <Home @searchAnime="onSearch()"></Home> -->
+  <!-- <FavoritesAnime></FavoritesAnime> -->
+  <!-- @searchAnime="onSearch()" -->
+  <RouterView @searchAnime="onSearch()"></RouterView>
 </template>
 
 <style scoped></style>
